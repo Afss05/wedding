@@ -4,19 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script>
+        $(document).ready(function(){
+            // Toggle submenu when a parent menu item is clicked
+            $('.submenu > a').click(function(e){
+                e.preventDefault(); // Prevent default link behavior
+                $(this).next('ul').slideToggle();
+            });
+        });
+    </script>
 
-    <!-- <style>
+    <style>
+
+        .header {
+        background: #9D3C72;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1001;
+        height: 60px;
+        }
+        
+        
     
         .sidebar {
-        background-color: #3a4352;
+        background-color: #D9ACF5;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         bottom: 0;
         left: 0;
         margin-top: 0;
         position: fixed;
+        overflow-y: auto;
         top: 60px;
         transition: all 0.2s ease-in-out 0s;
-        width: 240px;
+        width: 250px;
         z-index: 1001;
         }
         .sidebar.opened {
@@ -224,16 +250,16 @@
         top: 10px;
         }
 
-        .menu-title {
+        /* .menu-title {
         color: #a3a3a3;
         display: block;
         font-size: 14px;
         margin-bottom: 5px;
         padding: 0 25px;
-        }
+        } */
 
         .menu-title {
-        color: #9e9e9e;
+        color: #9D3C72;
         display: flex;
         font-size: 14px;
         opacity: 1;
@@ -245,11 +271,25 @@
         line-height: 40px;
         }
 
-    </style> -->
-fdfgcdh ygfj ktjuy jkujtf uilvtkj kbgtyubg n,bgjyug 
+        a {
+            text-decoration: none;
+            font-size: 16px !important;
+            color: black !important;
+            font-weight: bold;
+        }
+
+    </style>
 </head>
 <body>
-<div class="sidebar" id="sidebar">
+
+
+<div class="header">
+			
+            
+        </div>
+
+
+            <div class="sidebar" id="sidebar">
                 <div class="sidebar-inner slimscroll">
 					<div id="sidebar-menu" class="sidebar-menu">
 						<ul>
@@ -259,25 +299,14 @@ fdfgcdh ygfj ktjuy jkujtf uilvtkj kbgtyubg n,bgjyug
 							<li> 
 								<a href="dashboard.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
-							
-							<!-- <li class="menu-title"> 
-								<span>Authentication</span>
-							</li>
+							 
 						
-							<li class="submenu">
-								<a href="#"><i class="fe fe-user"></i> <span> Authentication </span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="index.php"> Login </a></li>
-									<li><a href="register.php"> Register </a></li>
-									
-								</ul>
-							</li> -->
 							<li class="menu-title"> 
 								<span>All Users</span>
 							</li>
 						
 							<li class="submenu">
-								<a href="#"><i class="fe fe-user"></i> <span> All Users </span> <span class="menu-arrow"></span></a>
+								<a href="#"><ion-icon name="person"></ion-icon> <span> All Users </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="adminlist.php"> Admin </a></li>
 									<li><a href="userlist.php"> Users </a></li>
@@ -286,17 +315,7 @@ fdfgcdh ygfj ktjuy jkujtf uilvtkj kbgtyubg n,bgjyug
 								</ul>
 							</li>
 
-							<!-- <li class="menu-title"> 
-								<span>State & City</span>
-							</li>
-						
-							<li class="submenu">
-								<a href="#"><i class="fe fe-location"></i> <span>State & City</span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="stateadd.php"> State </a></li>
-									<li><a href="cityadd.php"> City </a></li>
-								</ul>
-							</li> -->
+							
 						
 							<li class="menu-title"> 
 								<span>Property Management</span>
@@ -363,7 +382,7 @@ fdfgcdh ygfj ktjuy jkujtf uilvtkj kbgtyubg n,bgjyug
 							<li class="submenu">
 								<a href="#"><i class="fe fe-browser"></i> <span> Review Page </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<!-- <li><a href="aboutadd.php"> Add About Content </a></li> -->
+									<li><a href="aboutadd.php"> Add About Content </a></li>
 									<li><a href="reviewlook.php"> View Review </a></li>
 								</ul>
 							</li>
@@ -374,17 +393,9 @@ fdfgcdh ygfj ktjuy jkujtf uilvtkj kbgtyubg n,bgjyug
             </div>
 
 
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-    var menuTitle = document.querySelector('.menu-title');
-    var submenu = document.querySelector('.submenu ul');
-
-    menuTitle.addEventListener('click', function() {
-        submenu.style.display = (submenu.style.display === 'none') ? 'block' : 'none';
-    });
-});
-
-            </script>
+                
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>
