@@ -1,0 +1,107 @@
+<div class="container mt-4">
+            <h3>Nuptials categories</h3>
+            <div class="container text-center my-3">
+                <div class="row mx-auto my-auto justify-content-center">
+                    <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active" >
+                                <div class="col-md-4">
+                                    <div class=""><a href="#">
+                                            <div class="">
+                                                <img src="./images/vendors/catering.jpg"  width="100%"  height="200px">
+                                            </div>
+                                            <!-- <div class="card-img-overlay">Slide 1</div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" >
+                                <div class="col-md-4" style="">
+                                    <div class=""><a href="#">
+                                            <div class="cardimg">
+                                                <img src="./images/vendors/decoration.jpg" class="imgfluid" width="100%"  height="200px">
+                                            </div>
+                                            <!-- <div class="card-img-overlay">Slide 2</div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <div class="card"><a href="#">
+                                            <div class="cardimg">
+                                                <img src="./images/vendors/jellery.jpg" class="imgfluid" width="100%"  height="200px">
+                                            </div>
+                                            <!-- <div class="card-img-overlay">Slide 3</div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item vendor">
+                                <div class="col-md-4">
+                                    <div class="card"><a href="#">
+                                            <div class="cardimg">
+                                                <img src="./images/vendors/mackup_arties.jpg" class="imgfluid" width="100%"  height="200px">
+                                            </div>
+                                            <!-- <div class="card-img-overlay">Slide 4</div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <div class="card"><a href="#">
+                                            <div class="cardimg">
+                                                <img src="./images/vendors/mehndi.jpg" class="imgfluid" width="100%"  height="200px">
+                                            </div>
+                                            <!-- <div class="card-img-overlay">Slide 5</div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <div class="card"><a href="#">
+                                            <div class="cardimg">
+                                                <img src="./images/vendors/photographer.jpg" class="imgfluid" width="100%"  height="200px">
+                                            </div>
+                                            <!-- <div class="card-img-overlay">Slide 6</div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <div class="card"><a href="#">
+                                            <div class="cardimg">
+                                                <img src="./images/vendors/wear.jpg" class="imgfluid" width="100%"  height="200px">
+                                            </div>
+                                            <!-- <div class="card-img-overlay">Slide 6</div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="col-md-4">
+                                    <div class="card"><a href="#">
+                                            <div class="cardimg">
+                                                <img src="./images/vendors/venues.jpg" class="imgfluid" width="100%"  height="200px">
+                                            </div>
+                                            <!-- <div class="card-img-overlay">Slide 6</div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
