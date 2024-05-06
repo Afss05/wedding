@@ -186,6 +186,7 @@
     padding-top: 10px;
 }
 
+
 /* vendor pages */
 
 .ven_head {
@@ -202,3 +203,57 @@
 /* .vendor_img {
 
 } */
+
+/* login page style */
+
+.log-page {
+    background: url('./images/bgimg/log_img.jpg');
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    padding: 30px;
+    border: 1px solid #ffffff; /* white border */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* white background with transparency */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* white shadow with transparency */
+}
+
+.container h2 {
+    text-align: center;
+    color: black; /* white text */
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(68, 67, 67); /* white border */
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.5); /* white background with transparency */
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff; /* white background */
+    color: #000000; /* black text */
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #f0f0f0; /* light gray on hover */
+}

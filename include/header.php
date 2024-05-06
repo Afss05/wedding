@@ -684,7 +684,7 @@
 <body>
 <nav class="navbar navbar-expand-lg head">
     <div class="container-fluid">
-      <a class="navbar-brand" href="">Weddingtips</a>
+      <a class="navbar-brand" href="index.php">Weddingtips</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -772,7 +772,7 @@
             </ul>
           </div>
           <div class="nav-item">
-            <button type="button" class="btn btn-outline-primary"><a href="#" >Login</a></button>
+            <button type="button" class="btn btn-outline-primary"><a href="login.php" >Login</a></button>
           </div>
         </div>
         

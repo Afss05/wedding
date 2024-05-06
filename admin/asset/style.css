@@ -39,3 +39,90 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+/* ---------
+page-wrapper
+ ------------- */
+
+ .page-wrapper {
+    margin-left: 240px;
+    padding-top: 50px;
+    position: relative;
+    transition: all 0.4s ease;
+  }
+
+  .page-wrapper > .content {
+    padding: 1.875rem 1.875rem 0;
+  }
+
+  .page-title {
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  .page-header .breadcrumb {
+    background-color: transparent;
+    color: #6c757d;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding: 10px 0 20px 10px;
+  }
+  .page-header .breadcrumb a {
+    color: #333;
+  }
+  /* .card { 
+    position:relative;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    min-width:0;
+    word-wrap:break-word;
+    background-color:#fff;
+    background-clip:border-box;
+    border:1px solid rgba(0,0,0,.125);
+    border-radius:.25rem;
+   } */
+
+  .card {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.875rem;
+    height: auto;
+  }
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .dash-widget-header {
+    align-items: center;
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  .dash-widget-icon {
+    align-items: center;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-flex;
+    font-size: 1.875rem;
+    height: 50px;
+    justify-content: center;
+    line-height: 48px;
+    text-align: center;
+    width: 50px;
+  }
+
+  .dash-widget-info h3 {
+    margin-bottom: 10px;
+  }
+
+  .text-muted {
+    color: #757575 !important;
+  }
+
+  .progress.progress-sm {
+    height: 6px;
+  }

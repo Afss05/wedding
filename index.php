@@ -119,7 +119,7 @@
 			<div id="featureCarousel" class="carousel slide" data-bs-ride="carousel">
 				<h2 style="font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic;" class="font-weight-light float-start mt-5">Featured Vendors</h2>
 				<div class="float-end pe-md-4">
-					<a class="indicator" href="#featureCarousel" role="button" data-bs-slide="prev">
+					<a class="indicator left" href="#featureCarousel" role="button" data-bs-slide="prev">
 						<span class="fas fa-chevron-left" aria-hidden="true"></span>
 					</a> &nbsp;&nbsp;
 					<a class="w-aut indicator" href="#featureCarousel" role="button" data-bs-slide="next">

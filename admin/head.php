@@ -20,7 +20,7 @@
     <style>
 
         .header {
-        background: #9D3C72;
+        background: #D9ACF5;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         left: 0;
         position: fixed;
@@ -33,7 +33,8 @@
         
     
         .sidebar {
-        background-color: #D9ACF5;
+            /* background-color: #D9ACF5; */
+        background: #9D3C72;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         bottom: 0;
         left: 0;
@@ -250,16 +251,8 @@
         top: 10px;
         }
 
-        /* .menu-title {
-        color: #a3a3a3;
-        display: block;
-        font-size: 14px;
-        margin-bottom: 5px;
-        padding: 0 25px;
-        } */
-
         .menu-title {
-        color: #9D3C72;
+        color: #D9ACF5;
         display: flex;
         font-size: 14px;
         opacity: 1;
@@ -273,9 +266,13 @@
 
         a {
             text-decoration: none;
-            font-size: 16px !important;
-            color: black !important;
-            font-weight: bold;
+            /* font-size: 16px !important; */
+            color: white !important;
+            /* font-weight: bold; */
+        }
+
+        .submenu li a:hover {
+            background: white;
         }
 
     </style>
@@ -283,9 +280,8 @@
 <body>
 
 
-<div class="header">
-			
-            
+        <div class="header">
+	  
         </div>
 
 
@@ -297,7 +293,7 @@
 								<span>Main</span>
 							</li>
 							<li> 
-								<a href="dashboard.php"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+								<a href="dashboard.php"><i class="fa-brands fa-dashcube"></i> <span>Dashboard</span></a>
 							</li>
 							 
 						
@@ -306,25 +302,25 @@
 							</li>
 						
 							<li class="submenu">
-								<a href="#"><ion-icon name="person"></ion-icon> <span> All Users </span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
+								<a href="#"><i class="fa-solid fa-user"></i> <span> All Users </span> <span class="menu-arrow"></span></a>
+								<!-- <ul style="display: none;">
 									<li><a href="adminlist.php"> Admin </a></li>
 									<li><a href="userlist.php"> Users </a></li>
 									<li><a href="useragent.php"> Agent </a></li>
 									<li><a href="userbuilder.php"> Builder </a></li>
-								</ul>
+								</ul> -->
 							</li>
 
 							
 						
 							<li class="menu-title"> 
-								<span>Property Management</span>
+								<span>Vendor Management</span>
 							</li>
 							<li class="submenu">
-								<a href="#"><i class="fe fe-map"></i> <span> Property</span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fa-solid fa-user-tie"></i> <span> Vendors</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="propertyadd.php"> Add Property</a></li>
-									<li><a href="propertyview.php"> View Property </a></li>
+									<li><a href="propertyadd.php"> Add Vendor</a></li>
+									<li><a href="propertyview.php"> View Vendor </a></li>
 									
 								</ul>
 							</li>
@@ -335,7 +331,7 @@
 								<span>Query</span>
 							</li>
 							<li class="submenu">
-								<a href="#"><i class="fe fe-comment"></i> <span> Contact,Feedback </span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fa-solid fa-comment"></i> <span> Contact,Feedback </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="contactview.php"> Contact </a></li>
 									<li><a href="feedbackview.php"> Feedback </a></li>
@@ -346,7 +342,7 @@
 								<span>About</span>
 							</li>
 							<li class="submenu">
-								<a href="#"><i class="fe fe-browser"></i> <span> About Page </span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fa-solid fa-table-columns"></i> <span> About Page </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="aboutadd.php"> Add About Content </a></li>
 									<li><a href="aboutview.php"> View About </a></li>
@@ -365,7 +361,7 @@
 									<li><a href="leadview.php"> Lead View  </a></li>
 								</ul>
 							</li>
-							<li class="menu-title"> 
+							<!-- <li class="menu-title"> 
 								<span>Query</span>
 							</li>
 							<li class="submenu">
@@ -374,13 +370,13 @@
 									<li><a href="vmartenqueryview.php"> Enquery </a></li>
 									<li><a href="vmartcontactview.php"> Contact </a></li>
 								</ul>
-							</li>
+							</li> -->
 
 							<li class="menu-title"> 
 								<span>Reviews</span>
 							</li>
 							<li class="submenu">
-								<a href="#"><i class="fe fe-browser"></i> <span> Review Page </span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fa-solid fa-magnifying-glass"></i> <span> Review Page </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="aboutadd.php"> Add About Content </a></li>
 									<li><a href="reviewlook.php"> View Review </a></li>
