@@ -29,6 +29,11 @@ include("config.php");
 </head>
 <body>
 
+    <div class="page-wrapper">
+        <div class="row">
+            <?php include('include/header.php') ?>
+        </div>
+    </div>
     
 </body>
 </html>

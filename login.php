@@ -215,28 +215,27 @@ $conn->close();
            
         }
         .form-group {
-    position: relative;
-    margin-bottom: 1rem;
-}
+            position: relative;
+            margin-bottom: 1rem;
+        }
 
-.form-group input[type="email"],input[type="password"] {
-    padding-left: 2.5rem; /* Adjust as needed to accommodate the icon */
-}
+        .form-group input[type="email"],input[type="password"] {
+            padding-left: 2.5rem; /* Adjust as needed to accommodate the icon */
+        }
 
-.form-group span {
-    position: absolute;
-    left: 0.75rem; /* Adjust the position of the icon */
-    top: 50%;
-    transform: translateY(-50%);
-}
+        .form-group span {
+            position: absolute;
+            left: 0.75rem; /* Adjust the position of the icon */
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-/* Adjust the icon size and color */
-.form-group span i {
-    font-size: 1.25rem;
-    color: #888; /* Adjust the color as desired */
-}
+        /* Adjust the icon size and color */
+        .form-group span i {
+            font-size: 1.25rem;
+            color: #888; /* Adjust the color as desired */
+        }
   
-    
     </style>
 
 </head>

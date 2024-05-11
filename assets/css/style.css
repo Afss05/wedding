@@ -200,8 +200,17 @@
     font-size: 40px;
 }
 
-/* .vendor_img {
+/*  --------------------------
+         profile page
+    --------------------------
+*/
 
-} */
+.page-wrapper {
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
+    background-color: #fff;
+    overflow: hidden !important;
+    /* position: relative; */
+}
 
 
