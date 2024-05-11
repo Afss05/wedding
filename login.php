@@ -62,7 +62,10 @@ $conn->close();
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-        <!-- style link -->
+        <!-- icon link -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <style>
             /* login page style */
@@ -137,6 +140,102 @@ $conn->close();
         form p a:hover {
             text-decoration: underline; /* underline on hover */
         }
+        
+        .form_left{
+            margin-top: 40px;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 425px) {
+            .right_img {
+                display: none;
+            }
+            .container {
+            width: auto;
+            padding: 30px;
+            border: 1px solid #ffffff; /* white border */
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.3); /* white background with transparency */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* white shadow with transparency */
+            /* display: flex; */
+            }
+
+            .container h2 {
+                text-align: center;
+                color: black; /* white text */
+                padding-bottom: 10px;
+                padding-top: 0px !important;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid rgb(68, 67, 67, 05); /* white border */
+                border-radius: 10px;
+                background-color: rgba(255, 255, 255, 0.7); /* white background with transparency */
+            }
+
+            .form-group button {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 10px;
+                background-color: #ffffff; /* white background */
+                color: #000000; /* black text */
+                cursor: pointer;
+            }
+
+            .form-group button:hover {
+                background-color: #f0f0f0; /* light gray on hover */
+            }
+
+            /* Additional CSS for the <p> tag */
+            form p {
+                text-align: center;
+                margin-top: 10px;
+                font-weight: 800px;
+                color: black; /* white text */
+            }
+
+            form p a {
+                color: yellow; /* white text */
+                text-decoration: none;
+            }
+
+            form p a:hover {
+                text-decoration: underline; /* underline on hover */
+            }
+            
+            .form_left{
+                margin-top: 10px;
+            }
+           
+        }
+        .form-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-group input[type="email"],input[type="password"] {
+    padding-left: 2.5rem; /* Adjust as needed to accommodate the icon */
+}
+
+.form-group span {
+    position: absolute;
+    left: 0.75rem; /* Adjust the position of the icon */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Adjust the icon size and color */
+.form-group span i {
+    font-size: 1.25rem;
+    color: #888; /* Adjust the color as desired */
+}
+  
     
     </style>
 
@@ -150,15 +249,17 @@ $conn->close();
             <div class="right_img">
                 <img src="./images/bgimg/log_pic.png" alt="" style="width: auto; height: 400px;">
             </div>
-            <div class="form_left mt-5">
+            <div class="form_left ">
                 <h2> EXISTING MEMBER</h2>
                 <!-- <p style="color:green;"><?php echo $msg; ?></p> -->
                 <p style="color:red;"><?php echo $error; ?></p>
                 <form method="post">
                     <div class="form-group">
+                        <span><i class="fa-regular fa-user"></i></span>
                         <input type="email" id="email" name="vemail" placeholder="User email" >
                     </div>
                     <div class="form-group">
+                        <span><i class="fa-solid fa-key"></i></span>
                         <input type="password" id="password" name="vpassword" placeholder="User password" >
                     </div>
                     <div class="form-group">
