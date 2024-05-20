@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css2?family=Engagement&family=Parisienne&display=swap" rel="stylesheet">
+
+  <!-- icon link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
   <style>
     .head{
@@ -771,16 +778,28 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </div>
-          <div class="nav-item">
+          <!-- <div class="nav-item">
             <button type="button" class="btn btn-outline-primary"><a href="login.php" >Login</a></button>
-          </div>
+
+			<i class="fa-solid fa-user"></i><i class="fa-solid fa-caret-down"></i>
+          </div> -->
+		  <div class="nav-item">
+				<?php if(isset($_SESSION['vemail'])) { ?>
+					<!-- If the session variable 'vemail' is set (user is logged in), display the logout button -->
+					<button type="button" class="btn btn-outline-primary"><a href="logout.php">Logout</a></button>&nbsp;&nbsp;
+				<?php } else { ?>
+					<!-- If the session variable 'vemail' is not set (user is not logged in), display the login button -->
+					<button type="button" class="btn btn-outline-primary"><a href="login.php">Login</a></button>&nbsp;&nbsp;
+				<?php } ?>
+			</div>
+
         </div>
         
       </div>
     </div>
   </nav>
 
-
+  
 
 
 
@@ -850,6 +869,7 @@ function toggleDropdown() {
     // Toggle the class that controls visibility
     dropContent.classList.toggle("show");
   }
+
 
 
 

@@ -115,198 +115,197 @@ $conn->close();
 
 
     <style>
-            /* login page style */
+/* login page style */
 
-        .log-page {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.log-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .container {
-            width: auto;
-            /* padding: 30px; */
-            border: 1px solid #ffffff; /* white border */
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.5); /* white background with transparency */
-            box-shadow: 0 0 10px rgba(255, 255, 255, 1); /* white shadow with transparency */
-            display: flex;
-        }
+.container {
+    width: auto;
+    border: 1px solid #ffffff; /* white border */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* white background with transparency */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1); /* white shadow with transparency */
+    display: flex;
+}
 
-        .container h2 {
-            text-align: center;
-            color: black; 
-            padding-bottom: 10px;
-            padding-top: 30px;
-        }
+.container h2 {
+    text-align: center;
+    color: black; 
+    padding-bottom: 10px;
+    padding-top: 30px;
+}
 
-        .form-group {
-            margin-bottom: 5px;
-        }
+.form-group {
+    margin-bottom: 5px;
+    position: relative;
+}
 
-        .form-group input {
-            width: 80%;
-            padding: 10px;
-            border: 1px solid rgb(68, 67, 67, 05); /* white border */
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.7); /* white background with transparency */
-        }
+.form-group input {
+    width: 80%;
+    padding: 10px;
+    outline: none; 
+    border: none;
+    margin-top: 5px;
+    /* border-bottom: 2px solid ; default border color */
+    border-radius: 0px; /* remove border radius */
+    background-color: rgba(255, 255, 255, 0.7); /* white background with transparency */
+}
 
-        .form-group button {
-            width: 80%;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            background-color: #ffffff; /* white background */
-            color: #000000; /* black text */
-            cursor: pointer;
-        }
+.form-group input:focus {
+    border-bottom: 1px solid green; /* border bottom color on focus */
+    outline: none; /* remove outline on focus */
+}
 
-        .form-group button:hover {
-            background-color: #f0f0f0; /* light gray on hover */
-        }
+.form-group button {
+    margin-top: 5px;
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff; /* white background */
+    color: #000000; /* black text */
+    cursor: pointer;
+}
 
-        /* Additional CSS for the <p> tag */
-        form p {
-            text-align: left !important;
-            margin-top: 10px;
-            font-weight: 800px;
-            color: black; /* white text */
-        }
+.form-group button:hover {
+    background-color: #f0f0f0; /* light gray on hover */
+}
 
-        form p a {
-            color: yellow; /* white text */
-            text-decoration: none;
-        }
+/* Additional CSS for the <p> tag */
+form p {
+    text-align: left !important;
+    margin-top: 10px;
+    font-weight: 800px;
+    color: black; /* white text */
+}
 
-        form p a:hover {
-            text-decoration: underline; /* underline on hover */
-        }
+form p a {
+    color: yellow; /* white text */
+    text-decoration: none;
+}
 
-        .form-group p {
-            margin: 0px;
-            text-align: start;
-        }
-        .form-group {
-            position: relative;
-            margin-bottom: 1rem;
-        }
+form p a:hover {
+    text-decoration: underline; /* underline on hover */
+}
 
-        .form-group input[type="email"],
-        input[type="text"],
-        input[type="tel"],
-        input[type="password"] {
-            padding-left: 2.5rem; /* Adjust as needed to accommodate the icon */
-        }
+.form-group p {
+    margin: 0px;
+    text-align: start;
+}
 
-        .form-group span {
-            position: absolute;
-            left: 0.75rem; /* Adjust the position of the icon */
-            top: 50%;
-            transform: translateY(-50%);
-        }
+.form-group input[type="email"],
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+    padding-left: 2.5rem; 
+}
 
-        /* Adjust the icon size and color */
-        .form-group span i {
-            font-size: 1.25rem;
-            color: #888; /* Adjust the color as desired */
-        }
+.form-group span {
+    position: absolute;
+    left: 0.75rem; /* Adjust the position of the icon */
+    top: 50%;
+    transform: translateY(-50%);
+}
 
-        @media screen and (min-width: 320px) and (max-width: 425px) {
-            .right_img {
-                display: none;
-            }
-            .container {
-            width: auto;
-            padding: 30px;
-            border: 1px solid #ffffff; /* white border */
-            border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.3); /* white background with transparency */
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* white shadow with transparency */
-            /* display: flex; */
-            }
+/* Adjust the icon size and color */
+.form-group span i {
+    font-size: 1.25rem;
+    color: #888; /* Adjust the color as desired */
+}
 
-            .container h2 {
-                text-align: center;
-                color: black; /* white text */
-                padding-bottom: 10px;
-                padding-top: 0px !important;
-            }
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    .right_img {
+        display: none;
+    }
+    .container {
+        width: auto;
+        padding: 30px;
+        border: 1px solid #ffffff; /* white border */
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.3); /* white background with transparency */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* white shadow with transparency */
+    }
 
-            .form-group {
-                margin-bottom: 15px;
-            }
+    .container h2 {
+        text-align: center;
+        color: black; /* white text */
+        padding-bottom: 10px;
+        padding-top: 0px !important;
+    }
 
-            .form-group input {
-                width: 100%;
-                padding: 10px;
-                border: 1px solid rgb(68, 67, 67, 05); /* white border */
-                border-radius: 10px;
-                background-color: rgba(255, 255, 255, 0.7); /* white background with transparency */
-            }
+    .form-group {
+        margin-bottom: 15px;
+    }
 
-            .form-group button {
-                width: 100%;
-                padding: 10px;
-                border: none;
-                border-radius: 10px;
-                background-color: #ffffff; /* white background */
-                color: #000000; /* black text */
-                cursor: pointer;
-            }
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgb(68, 67, 67, 05); /* white border */
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.7); /* white background with transparency */
+    }
 
-            .form-group button:hover {
-                background-color: #f0f0f0; /* light gray on hover */
-            }
+    .form-group button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: #ffffff; /* white background */
+        color: #000000; /* black text */
+        cursor: pointer;
+    }
 
-            /* Additional CSS for the <p> tag */
-            form p {
-                text-align: center;
-                margin-top: 10px;
-                font-weight: 800px;
-                color: black; /* white text */
-            }
+    .form-group button:hover {
+        background-color: #f0f0f0; /* light gray on hover */
+    }
 
-            form p a {
-                color: yellow; /* white text */
-                text-decoration: none;
-            }
+    /* Additional CSS for the <p> tag */
+    form p {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 800px;
+        color: black; /* white text */
+    }
 
-            form p a:hover {
-                text-decoration: underline; /* underline on hover */
-            }
-            
-            .form_left{
-                margin-top: 10px;
-            }
-            .form-group {
-                position: relative;
-                margin-bottom: 1rem;
-            }
+    form p a {
+        color: yellow; /* white text */
+        text-decoration: none;
+    }
 
-            .form-group input[type="email"],
-            input[type="text"],
-            input[type="tel"],
-            input[type="password"] {
-                padding-left: 2.5rem; /* Adjust as needed to accommodate the icon */
-            }
-
-            .form-group span {
-                position: absolute;
-                left: 0.75rem; /* Adjust the position of the icon */
-                top: 50%;
-                transform: translateY(-50%);
-            }
-
-            /* Adjust the icon size and color */
-            .form-group span i {
-                font-size: 1.25rem;
-                color: #888; /* Adjust the color as desired */
-            }
-        }
-  
+    form p a:hover {
+        text-decoration: underline; /* underline on hover */
+    }
     
-    </style>
+    .form_left{
+        margin-top: 10px;
+    }
+
+    .form-group input[type="email"],
+    input[type="text"],
+    input[type="tel"],
+    input[type="password"] {
+        padding-left: 2.5rem; /* Adjust as needed to accommodate the icon */
+    }
+
+    .form-group span {
+        position: absolute;
+        left: 0.75rem; /* Adjust the position of the icon */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* Adjust the icon size and color */
+    .form-group span i {
+        font-size: 1.25rem;
+        color: #888; /* Adjust the color as desired */
+    }
+}
+</style>
+
 
 </head>
 <body>
@@ -327,7 +326,12 @@ $conn->close();
                 <form id="registrationForm" method="post" >
                     <div class="form-group">
                         <span><i class="fa-solid fa-user"></i></span>
-                        <input type="text" id="name" name="vname" placeholder="Your Name" >
+                        <input type="text" id="name" name="vname" placeholder="Your_Brand_Name" >
+                        
+                    </div>
+                    <div class="form-group">
+                        <span><i class="fa-solid fa-square-phone"></i></span>
+                        <input type="tel" id="contact" name="vcontact" placeholder="Your Contact Number" >
                         
                     </div>
                     <div class="form-group">
@@ -338,11 +342,6 @@ $conn->close();
                     <div class="form-group">
                         <span><i class="fa-solid fa-key"></i></span>
                         <input type="password" id="password" name="vpassword" placeholder="Choose a Password" >
-                        
-                    </div>
-                    <div class="form-group">
-                        <span><i class="fa-solid fa-square-phone"></i></span>
-                        <input type="tel" id="contact" name="vcontact" placeholder="Your Contact Number" >
                         
                     </div>
                     <div class="form-group">

@@ -105,9 +105,16 @@ $conn->close();
         .form-group input {
             width: 100%;
             padding: 10px;
-            border: 1px solid rgb(68, 67, 67, 05); /* white border */
-            border-radius: 10px;
+            /* border: 1px solid rgb(68, 67, 67, 05); white border */
+            border: none; /* white border */
+            border-radius: 0px;
             background-color: rgba(255, 255, 255, 0.7); /* white background with transparency */
+        }
+
+        input[type="password"]:focus,
+            input[type="email"]:focus {
+            border-bottom: #333;
+            outline: none;
         }
 
         .form-group button {
