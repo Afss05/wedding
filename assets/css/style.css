@@ -204,129 +204,22 @@
          profile page
     --------------------------
 */
-
 .page-wrapper {
     background-color: #d3915f;
     overflow: hidden !important;
-    height: 600px;
-
-}
-
-.profile_body {
-    background-color: #ffffff;
-    margin-top: 30px;
-    border: 1px solid #ffffff; /* white border */
-    border-radius: 10px;
     height: auto;
 }
 
-.pro_head {
-    display: flex;
+.body_content {
+    height: 600px;
+    background-color: white;
+    margin: 20px;
 }
 
-.pro_head_line {
-    padding-left: 10px;
-    text-align: center;
-    margin-top: 10px;
-    padding: 5px;
+.sec_header {
+    background-color: #A10035 !important;
 }
 
-.pro_head_line a  {
-    text-decoration: none;
-    border: 1px solid brown;
-    border-radius: 20px;
-    padding: 5px 20px;
-    font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-
-   /* product listed */
-
-
-.pro_list_head {
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.pro_list_head h4 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.pro_list_head button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.pro_list_head button:hover {
-    background-color: #24ff07;
-    color: black;
-}
-
-.pro_list table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 2px solid black; 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.pro_list th, .pro_list td {
-    padding: 12px 15px;
-    text-align: left;
-}
-
-.pro_list th {
-    background-color: #f8f9fa;
-    color: #333;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.pro_list td {
-    font-family: "Sedan SC", serif;
-}
-
-.pro_list tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.pro_list tbody tr:hover {
-    background-color: #e0e0e0;
-}
-
-/* Responsive design */
-@media screen and (max-width: 600px) {
-    .pro_list thead {
-        display: none;
-    }
-
-    .pro_list tbody tr {
-        display: block;
-        border-bottom: 2px solid #ddd;
-        margin-bottom: 10px;
-    }
-
-    .pro_list tbody td {
-        display: block;
-        text-align: right;
-    }
-
-    .pro_list tbody td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        float: left;
-        text-transform: uppercase;
-    }
+.user-data {
+    text-align: end !important;
 }

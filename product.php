@@ -62,7 +62,7 @@ include("config.php");
                 </nav>
                 <!-- body content -->
 
-                <p class="text-center"></p>
+                <p class="text-center">All Details Display</p>
 
         </div>
     </div>
