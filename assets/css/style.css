@@ -201,7 +201,7 @@
 }
 
 /*  --------------------------
-         profile page
+        profile page
     --------------------------
 */
 .page-wrapper {
@@ -211,7 +211,8 @@
 }
 
 .body_content {
-    height: 600px;
+    /* height: 600px; */
+    height: auto;
     background-color: white;
     margin: 20px;
 }
@@ -220,6 +221,53 @@
     background-color: #A10035 !important;
 }
 
-.user-data {
-    text-align: end !important;
+.result-container {
+    border: 1px solid red;
+}
+
+/* .result_content {
+    width: auto;
+    display: flex;
+    align-items: center;
+} */
+
+.result-container p{
+    /* border-bottom: 1px solid red; */
+    display: inline-block;
+    width: auto;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Add background color to alternating rows */
+.result-container p:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Add hover effect */
+.result-container p:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style the links */
+.result-container p span a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.result-container p span a:hover {
+    text-decoration: underline;
+}
+
+.result-container p span {
+    color: #555;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1440px) {
+    .user-data {
+        margin-left: 500px;
+    }
 }

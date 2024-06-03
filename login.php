@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
                 $_SESSION['user_id'] = $user['vid']; // Assuming 'id' is the primary key of the user
                 $_SESSION['user_email'] = $user['vemail'];
                 header("Location: profile.php");
-                exit();
+                // exit();
             } else {
                 // Password is incorrect
                 $error = "Incorrect password";

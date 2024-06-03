@@ -45,9 +45,9 @@ include("config.php");
                         <div class="collapse navbar-collapse user-data" id="navbarNav">
                             <ul class="navbar-nav ">
                                 <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="profile.php">Information</a>
+                                <a class="nav-link" aria-current="page" href="profile.php">Information</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                 <a class="nav-link" href="product.php">Product</a>
                                 </li>
                                 <li class="nav-item">
