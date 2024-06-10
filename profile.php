@@ -3,24 +3,27 @@ ini_set('session.cache_limiter','public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
-
-// if(!isset($_SESSION['vemail']))
-// {
-// 	// header("location:profile.php");
-// }
-
-if (["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) 
-// if(isset($_POST['add']))
+if(!isset($_SESSION['vemail']))
+{
+	header("location:login.php");
+}
+//// code insert
+//// add code
+$error="";
+$msg="";
+// if (["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) 
+if(isset($_POST['add']))
  {
     $brandName = $_POST['brandName'];
     $category = $_POST['category'];
     $contactPerson = $_POST['contactPerson'];
     $phoneNumber = $_POST['phoneNumber'];
     $email = $_POST['email'];
-	$vid=$_SESSION['vid'];
     $address = $_POST['address'];
     $description = $_POST['description'];
     $yearsInBusiness = $_POST['yearsInBusiness'];
+
+	$vid=$_SESSION['vid'];
 
     // Handle file upload
     $logo = $_FILES['logo']['name'];
@@ -35,15 +38,17 @@ if (["REQUEST_METHOD"] == "POST" && isset($_POST['add']))
 
     $sql = "INSERT INTO vr_details (brandName, category, contactPerson, phoneNumber, email, vid, address, description, yearsInBusiness, logo, facebook, instagram, youtube, website)
     VALUES ('$brandName', '$category', '$contactPerson', '$phoneNumber', '$email', '$vid', '$address', '$description', '$yearsInBusiness', '$logo', '$facebook', '$instagram', '$youtube', '$website')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-}
-
-$conn->close();
+    $result=mysqli_query($con,$sql);
+    if($result)
+        {
+            $msg="<p class='alert alert-success'>Property Inserted Successfully</p>";
+                    
+        }
+        else
+        {
+            $error="<p class='alert alert-warning'>Property Not Inserted Some Error</p>";
+        }
+}							
 ?>
 
 <!DOCTYPE html>
@@ -69,84 +74,110 @@ $conn->close();
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <style>
-        .form-container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        .form_body {
             width: 100%;
-            max-width: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }     
+
+        .container {
+            max-width: 800px;
+            width: 100%;
         }
 
-        .form-container h2 {
+        .form-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
             text-align: center;
             margin-bottom: 20px;
-            font-size: 24px;
-            color: #333333;
+            color: #333;
         }
 
         .form-group {
+            display: flex;
+            align-items: center;
             margin-bottom: 15px;
         }
 
         .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555555;
+            width: 150px;
+            margin-right: 20px;
+            text-align: right;
+            color: #555;
         }
 
         .form-group input,
         .form-group textarea {
-            width: 100%;
+            width: calc(100% - 170px);
             padding: 10px;
-            border: 1px solid #dddddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-            color: #333333;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
         }
 
-        .form-group input[type="file"] {
-            padding: 5px;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007BFF;
         }
 
         .form-group textarea {
             resize: vertical;
         }
 
-        .form-group button {
-            width: 100%;
-            padding: 12px;
-            background-color: #007BFF;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        .social-media-links {
+            margin-bottom: 20px;
         }
 
-        .form-group button:hover {
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
             background-color: #0056b3;
         }
 
-        .social-media-links {
-            display: flex;
-            justify-content: space-between;
+        /* Responsive Styles */ 
+        @media (max-width: 768px) {
+            .form-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .form-group label {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 5px;
+                text-align: left;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+            }
         }
 
-        .social-media-links .form-group {
-            flex: 1;
-            margin-right: 10px;
-        }
 
-        .social-media-links .form-group:last-child {
-            margin-right: 0;
-        }
 
         .result-container {
-            /* display: none; */
+            display: none;
             margin-top: 20px;
             padding: 20px;
             background-color: #ffffff;
@@ -211,78 +242,79 @@ $conn->close();
             <!-- body content -->
 
             <!-- <p class="text-center">All Details Display</p>   -->
-
-            <div class="container">
-                <div class="form-container">
-                    <h2>Business Information Form</h2>
-                    <form id="businessForm" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="brandName">Brand Name:</label>
-                            <input type="text" id="brandName" name="brandName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="category">Category:</label>
-                            <input type="text" id="category" name="category" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactPerson">Contact Person:</label>
-                            <input type="text" id="contactPerson" name="contactPerson" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phoneNumber">Phone Number:</label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address:</label>
-                            <input type="text" id="address" name="address" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description:</label>
-                            <textarea id="description" name="description" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="yearsInBusiness">Years in Business:</label>
-                            <input type="number" id="yearsInBusiness" name="yearsInBusiness" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="logo">Logo:</label>
-                            <input type="file" id="logo" name="logo" accept="image/*" required>
-                        </div>
-                        <div class="social-media-links">
+            <div class="form_body">
+                <div class="container">
+                    <div class="form-container">
+                        <h2>Business Information Form</h2>
+                        <form id="businessForm" method="post" enctype="multipart/form-data" onsubmit="handleSubmit(event)">
                             <div class="form-group">
-                                <label for="facebook">Facebook Link:</label>
-                                <input type="url" id="facebook" name="facebook">
+                                <label for="brandName">Brand Name:</label>
+                                <input type="text" id="brandName" name="brandName" required>
                             </div>
                             <div class="form-group">
-                                <label for="instagram">Instagram Link:</label>
-                                <input type="url" id="instagram" name="instagram">
-                            </div>
-                        </div>
-                        <div class="social-media-links">
-                            <div class="form-group">
-                                <label for="youtube">YouTube Link:</label>
-                                <input type="url" id="youtube" name="youtube">
+                                <label for="category">Category:</label>
+                                <input type="text" id="category" name="category" required>
                             </div>
                             <div class="form-group">
-                                <label for="website">Website:</label>
-                                <input type="url" id="website" name="website">
+                                <label for="contactPerson">Contact Person:</label>
+                                <input type="text" id="contactPerson" name="contactPerson" required>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" name="add">Submit</button>
-                        </div>
-                    </form>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number:</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address:</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description:</label>
+                                <textarea id="description" name="description" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="yearsInBusiness">Years in Business:</label>
+                                <input type="number" id="yearsInBusiness" name="yearsInBusiness" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="logo">Logo:</label>
+                                <input type="file" id="logo" name="logo" accept="image/*" required>
+                            </div>
+                            <div class="social-media-links">
+                                <div class="form-group">
+                                    <label for="facebook">Facebook Link:</label>
+                                    <input type="url" id="facebook" name="facebook">
+                                </div>
+                                <div class="form-group">
+                                    <label for="instagram">Instagram Link:</label>
+                                    <input type="url" id="instagram" name="instagram">
+                                </div>
+                            </div>
+                            <div class="social-media-links">
+                                <div class="form-group">
+                                    <label for="youtube">YouTube Link:</label>
+                                    <input type="url" id="youtube" name="youtube">
+                                </div>
+                                <div class="form-group">
+                                    <label for="website">Website:</label>
+                                    <input type="url" id="website" name="website">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" name="add">Submit</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container" id="resultContainer">
                 <div class="col-lg-12">
                     <div class="row">
-                        <div class="result-container" id="resultContainer">
+                        <div class="result-container" >
                             <h2>Personal Details</h2>
                             <div class="result_content col-md-6">
                                 <p class=""><strong>Brand Name:</strong> <span id="resultBrandName"></span></p>
@@ -314,7 +346,6 @@ $conn->close();
                         </div>
                     </div>
                 </div>
-                
             </div>
             
             <!-- <script>
@@ -337,6 +368,44 @@ $conn->close();
                     document.querySelector('.form-container').style.display = 'none';
                     document.getElementById('resultContainer').style.display = 'block';
                 });
+            </script> -->
+
+            <?php
+            if(isset($_POST['add']) && $result) {
+                echo "
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('resultBrandName').innerText = '$brandName';
+                    document.getElementById('resultCategory').innerText = '$category';
+                    document.getElementById('resultContactPerson').innerText = '$contactPerson';
+                    document.getElementById('resultPhoneNumber').innerText = '$phoneNumber';
+                    document.getElementById('resultEmail').innerText = '$email';
+                    document.getElementById('resultAddress').innerText = '$address';
+                    document.getElementById('resultDescription').innerText = '$description';
+                    document.getElementById('resultYearsInBusiness').innerText = '$yearsInBusiness';
+                    document.getElementById('resultFacebook').innerText = '$facebook';
+                    document.getElementById('resultInstagram').innerText = '$instagram';
+                    document.getElementById('resultYouTube').innerText = '$youtube';
+                    document.getElementById('resultWebsite').innerText = '$website';
+                      document.querySelector('.form-container').style.display = 'none';
+                    document.getElementById('resultContainer').style.display = 'block';
+                });
+                </script>";
+            }
+            ?>
+
+            <!-- <script>
+                document.getElementById('businessForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+                
+                // Hide the form container
+                document.getElementById('formContainer').style.display = 'none';
+                
+                // Show the result container
+                document.getElementById('resultContainer').style.display = 'block';
+                
+                // Optionally, you can add code here to populate the result container with form data
+            });
             </script> -->
  
         </div>

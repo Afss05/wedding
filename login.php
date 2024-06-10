@@ -1,46 +1,33 @@
-<?php
-// Start the session
+<?php 
 session_start();
-
-// Include database configuration
-include 'config.php';
-
-// Initialize error variable
-$error = "";
-
-// Handle login form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
-    $email = $_POST['vemail'];
-    $password = $_POST['vpassword'];
-
-    // Validate email and password
-    if (empty($email) || empty($password)) {
-        $error = "Email and password are required";
-    } else {
-        // Check if the user exists in the database
-        $check_query = "SELECT * FROM vendor WHERE vemail='$email' AND vpassword='$password' ";
-        $stmt = $conn->prepare($check_query);
-        // $stmt->bind_param("ss", $email, $password);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows == 1) {
-            // User exists, verify password
-            $user = $result->fetch_assoc();
-                // Password is correct, set session variables and redirect to profile page
-                $_SESSION['user_id'] = $user['vid']; // Assuming 'id' is the primary key of the user
-                $_SESSION['user_email'] = $user['vemail'];
-                header("Location: profile.php");
-                // exit();
-            } else {
-                // Password is incorrect
-                $error = "Incorrect password";
-            }
-        }    
-    }
-
-// Close database connection
-$conn->close();
+include("config.php");
+$error="";
+$msg="";
+if(isset($_REQUEST['login']))
+{
+	$email=$_REQUEST['vemail'];
+	$password=$_REQUEST['vpassword'];
+	// $pass= sha1($pass);
+	
+	if(!empty($email) && !empty($password))
+	{
+		$sql = "SELECT * FROM vendor where vemail='$email' && vpassword='$password'";
+		$result=mysqli_query($con, $sql);
+		$row=mysqli_fetch_array($result);
+		   if($row){
+			   
+				$_SESSION['vid']=$row['vid'];
+				$_SESSION['vemail']=$email;
+				header("location:profile.php");
+				
+		   }
+		   else{
+			   $error = "<p class='alert alert-warning'>Email or Password doesnot match!</p> ";
+		   }
+	}else{
+		$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
+	}
+}
 ?>
 
 

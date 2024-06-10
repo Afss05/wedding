@@ -39,54 +39,45 @@ function validatePassword($password) {
 }
 
 // Handle form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['vname'];
-    $email = $_POST['vemail'];
-    $password = $_POST['vpassword'];
-    $contact = $_POST['vcontact'];
-
-    // Check if any field is empty
-    if (empty($name) || empty($email) || empty($password) || empty($contact)) {
-        $error = "All fields are required";
-    } else {
-        // Validate email
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $error = "Invalid email format";
-        } else {
-            // Validate password
-            if (!validatePassword($password)) {
-                $error = "Password does not meet the criteria(Asd@12)";
-            } else {
-                // Check if email already exists
-                $check_query = "SELECT * FROM vendor WHERE vemail=?";
-                $stmt = $conn->prepare($check_query);
-                $stmt->bind_param("s", $email);
-                $stmt->execute();
-                $result = $stmt->get_result();
-                
-                if ($result->num_rows > 0) {
-                    $error = "Email already exists";
-                } else {
-                    // Insert data into database
-                    $insert_query = "INSERT INTO vendor (vname, vemail, vpassword, vcontact) VALUES (?, ?, ?, ?)";
-                    $stmt = $conn->prepare($insert_query);
-                    $stmt->bind_param("ssss", $name, $email, $password, $contact);
-                    if ($stmt->execute()) {
-                        $msg = "Registration successful";
-                        // Redirect to profile page
-                        header("Location: profile.php");
-                        exit(); // Ensure script execution stops after redirection
-                    } else {
-                        $error = "Error: " . $stmt->error;
-                    }
-                }
-            }
-        }
-    }
+if(isset($_REQUEST['reg']))
+{
+	$name=$_REQUEST['vname'];
+	$email=$_REQUEST['vemail'];
+	$phone=$_REQUEST['vcontact'];
+	$password=$_REQUEST['vpassword'];
+	
+	// $pass= sha1($pass);  
+	
+	$query = "SELECT * FROM vendor where vemail='$email'";
+	$res=mysqli_query($con, $query);
+	$num=mysqli_num_rows($res);
+	
+	if($num == 1)
+	{
+		$error = "<p class='alert alert-warning'>Email Id already Exist</p> ";
+	}
+	else
+	{
+		
+		if(!empty($name) && !empty($email) && !empty($phone) && !empty($password) )
+		{
+			
+			$sql="INSERT INTO vendor (vname,vemail,vcontact,vpassword) VALUES ('$name','$email','$phone','$password')";
+			$result=mysqli_query($con, $sql);
+			// move_uploaded_file($temp_name1,"admin/user/$uimage");
+			   if($result){
+				   $msg = "<p class='alert alert-success'>Register Successfully</p> ";
+                   header("location:profile.php");
+			   }
+			   else{
+				   $error = "<p class='alert alert-warning'>Register Not Successfully</p> ";
+			   }
+		}else{
+			$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
+		}
+	}
+	
 }
-
-// Close database connection
-$conn->close();
 ?>
 
 
@@ -345,7 +336,7 @@ input[type="password"] {
                         
                     </div>
                     <div class="form-group">
-                        <button type="submit" name="regist">Register</button>
+                        <button type="submit" name="reg">Register</button>
                     </div>
                     <p style="text-align: center;">Already have an account? <a href="login.php">Login</a></p> <!-- Adjust the href attribute accordingly -->
                 </form>
