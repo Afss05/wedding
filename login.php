@@ -11,7 +11,8 @@ if(isset($_REQUEST['login']))
 	
 	if(!empty($email) && !empty($password))
 	{
-		$sql = "SELECT * FROM vendor where vemail='$email' && vpassword='$password'";
+		$sql = "SELECT * FROM new where vemail='$email' && vpassword='$password'";
+		// $sql = "SELECT * FROM vendor where vemail='$email' && vpassword='$password'";
 		$result=mysqli_query($con, $sql);
 		$row=mysqli_fetch_array($result);
 		   if($row){

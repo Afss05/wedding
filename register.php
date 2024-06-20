@@ -48,7 +48,8 @@ if(isset($_REQUEST['reg']))
 	
 	// $pass= sha1($pass);  
 	
-	$query = "SELECT * FROM vendor where vemail='$email'";
+	// $query = "SELECT * FROM vendor where vemail='$email'";
+	$query = "SELECT * FROM new where vemail='$email'";
 	$res=mysqli_query($con, $query);
 	$num=mysqli_num_rows($res);
 	
@@ -62,7 +63,8 @@ if(isset($_REQUEST['reg']))
 		if(!empty($name) && !empty($email) && !empty($phone) && !empty($password) )
 		{
 			
-			$sql="INSERT INTO vendor (vname,vemail,vcontact,vpassword) VALUES ('$name','$email','$phone','$password')";
+			// $sql="INSERT INTO vendor (vname,vemail,vcontact,vpassword) VALUES ('$name','$email','$phone','$password')";
+			$sql="INSERT INTO new (vname,vemail,vcontact,vpassword) VALUES ('$name','$email','$phone','$password')";
 			$result=mysqli_query($con, $sql);
 			// move_uploaded_file($temp_name1,"admin/user/$uimage");
 			   if($result){

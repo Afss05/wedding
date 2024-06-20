@@ -225,49 +225,36 @@
     border: 1px solid red;
 }
 
-/* .result_content {
-    width: auto;
+.result-content {
     display: flex;
     align-items: center;
-} */
-
-.result-container p{
-    /* border-bottom: 1px solid red; */
-    display: inline-block;
-    width: auto;
-    color: #333;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
-/* Add background color to alternating rows */
-.result-container p:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Add hover effect */
-.result-container p:hover {
-    background-color: #f1f1f1;
-}
-
-/* Style the links */
-.result-container p span a {
-    color: #1a73e8;
-    text-decoration: none;
-}
-
-.result-container p span a:hover {
-    text-decoration: underline;
-}
-
-.result-container p span {
+.result-content h3 {
+    width: 25%;
+    margin-right: 20px;
+    text-align: right !important;
     color: #555;
+    font-size: 20px;
+}
+
+.result-content p span {
+    width: calc(100% - 170px);
+    padding: 10px;
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1440px) {
     .user-data {
         margin-left: 500px;
     }
+}
+
+.person_details {
+    /* border: 2px solid red !important; */
+    padding: 20px;
+}
+
+.box-body {
+    display: flex;
 }
