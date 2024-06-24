@@ -21,31 +21,22 @@ if(isset($_POST['add']))
     $phoneNumber = $_POST['phoneNumber'];
     $email = $_POST['email'];
     $address = $_POST['address'];
-    $logo = $_POST['logo'];
+    // $logo = $_POST['logo'];
     $description = $_POST['description'];
     $yearsInBusiness = $_POST['yearsInBusiness'];
 
 	$vid=$_SESSION['vid'];
 
-    // // Handle file upload
-    // $logo = $_FILES['logo']['name'];
-
-    // $temp_name  =$_FILES['logo']['tmp_name'];
-
-	// move_uploaded_file($temp_name,"uploads/$aimage");
-
-
-    // $target_dir = "uploads/$logo";
-    // $target_file = $target_dir . basename($logo);
-    // move_uploaded_file($_FILES['logo']['tmp_name'], $target_file);
+    // Handling file upload
+    $logo = $_FILES['logo']['name'];
+    $temp_name1 = $_FILES['logo']['tmp_name'];
+    $upload_dir = "uploads/";
 
     $facebook = $_POST['facebook'];
     $instagram = $_POST['instagram'];
     $youtube = $_POST['youtube'];
     $website = $_POST['website'];
 
-    // $sql = "INSERT INTO vr_details (brandName, category, contactPerson, phoneNumber, email, vid, address, description, yearsInBusiness, logo, facebook, instagram, youtube, website)
-    // VALUES ('$brandName', '$category', '$contactPerson', '$phoneNumber', '$email', '$vid', '$address', '$description', '$yearsInBusiness', '$logo', '$facebook', '$instagram', '$youtube', '$website')";
     
     $sql = "UPDATE new
     SET brandName = '$brandName',
@@ -61,7 +52,7 @@ if(isset($_POST['add']))
     instagram = '$instagram',
     youtube = '$youtube',
     website = '$website'
-WHERE vid = '$vid' ";
+        WHERE vid = '$vid' ";
     
     $result=mysqli_query($con,$sql);
     if($result)
@@ -73,7 +64,8 @@ WHERE vid = '$vid' ";
         {
             $error="<p class='alert alert-warning'>Property Not Inserted Some Error</p>";
         }
-        header("Location: profile.php");
+        // Redirect with message
+        header("Location: profile.php?msg=$msg&error=$error");
         exit();
     }		
 
@@ -156,6 +148,7 @@ WHERE vid = '$vid' ";
         }
 
         .form-group input,
+        .form-group select,
         .form-group textarea {
             width: calc(100% - 170px);
             padding: 10px;
@@ -394,50 +387,49 @@ WHERE vid = '$vid' ";
                                             </div>
                                             <div class="result-content">
                                                 <h3><strong>Category:</strong></h3>
-                                                <p><span><?php echo $row['1'];?></span></p>
+                                                <p><span><?php echo $row['6'];?></span></p>
                                             </div>
                                             <div class="result-content">
                                                 <h3><strong>PhoneNumber:</strong></h3>
-                                                <p><span><?php echo $row['1'];?></span></p>
+                                                <p><span><?php echo $row['8'];?></span></p>
                                             </div>
                                             <div class="result-content">
                                                 <h3><strong>Email:</strong></h3>
-                                                <p><span><?php echo $row['1'];?></span></p>
+                                                <p><span><?php echo $row['9'];?></span></p>
                                             </div>
                                             <div class="result-content">
                                                 <h3><strong>Years of Business:</strong></h3>
-                                                <p><span><?php echo $row['1'];?></span></p>
+                                                <p><span><?php echo $row['10'];?></span></p>
                                             </div>
                                             <div class="result-content">
                                                 <h3><strong>InstagramId:</strong></h3>
-                                                <p><span><?php echo $row['1'];?></span></p>
+                                                <p><span><?php echo $row['11'];?></span></p>
                                             </div>
                                             <div class="result-content">
                                                 <h3><strong>FacebookProfile:</strong></h3>
-                                                <p><span><?php echo $row['1'];?></span></p>
+                                                <p><span><?php echo $row['12'];?></span></p>
                                             </div>
                                             <div class="result-content">
                                                 <h3><strong>YouTube:</strong></h3>
-                                                <p><span><?php echo $row['1'];?></span></p>
+                                                <p><span><?php echo $row['12'];?></span></p>
                                             </div>
                                             <div class="result-content">
                                                 <h3><strong>Website:</strong></h3>
-                                                <p><span><?php echo $row['1'];?></span></p>
+                                                <p><span><?php echo $row['14'];?></span></p>
                                             </div>
                                             <div class="result-content">
                                                 <h3><strong>Description:</strong></h3>
-                                                <p><span><?php echo $row['1'];?></span></p>
+                                                <p><span><?php echo $row['15'];?></span></p>
                                             </div>
                                         <?php } ?>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-4">
+                            <div class="col-md-4">
                                 <div class="ven_logo">
-                                    <img src="<?php echo $row['13'];?>" alt="" height="250px" width="350px"> 
-                                    <img src="./uploads/<?php echo $row['13'];?>" alt="" height="250px" width="350px"> 
+                                    <img src="uploads/<?php echo $row['logo'];?>" alt="image" height="250px" width="350px"> 
                                 </div>
-                            </div> -->
+                            </div>
                             
                         </div>
                     </div>
@@ -516,14 +508,24 @@ WHERE vid = '$vid' ";
             <div class="container">
                     <div class="form-container">
                         <h2>Business Information Form</h2>
-                        <form id="businessForm" method="post" onsubmit="handleSubmit(event)">
+                        <form id="businessForm" method="post" onsubmit="handleSubmit(event)" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="brandName">BrandName:</label>
                                 <input type="text" id="brandName" name="brandName" value="a"  disable>
                             </div>
                             <div class="form-group">
                                 <label for="category">Category:</label>
-                                <input type="text" id="category" name="category" >
+                                <!-- <input type="text" id="category" name="category" > -->
+                                <select class="form" name="category" required>
+                                    <option value="" class="disable">All Categories</option>
+                                    <option value="mackupart">Mackup_Art</option>
+                                    <option value="photographers">Photographers</option>
+                                    <option value="venues">Venues</option>
+                                    <option value="mehndiart">Mehndi_Art</option>
+                                    <option value="jewellery">Jewellery</option>
+                                    <option value="weddingwear">Wedding_Wear</option>
+                                    <option value="weddingphoto">Wedding_Photo</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="contactPerson">Contact Person:</label>
@@ -538,7 +540,7 @@ WHERE vid = '$vid' ";
                                 <input type="email" id="email" name="email" >
                             </div>
                             <div class="form-group">
-                                <label for="address">Address:</label>
+                                <label for="address">City:</label>
                                 <input type="text" id="address" name="address" >
                             </div>
                             <div class="form-group">

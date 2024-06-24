@@ -237,6 +237,69 @@ include("config.php");
 		</div>
 	</div>
 
+
+
+       <!--	Recent Properties  -->
+        <div class="full-row mt-5 mb-5">
+            <div class="container">
+				<div class="col-lg-12">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="text-dark double-down-line text-center mb-4" style="font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic;">Recent Property</h2>
+						</div>
+						<!-- - <div class="col-md-6">
+							<ul class="nav property-btn float-right" id="pills-tab" role="tablist">
+								<li class="nav-item"> <a class="nav-link py-3 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">New</a> </li>
+								<li class="nav-item"> <a class="nav-link py-3" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Featured</a> </li>
+								<li class="nav-item"> <a class="nav-link py-3" id="pills-contact-tab2" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Top Sale</a> </li>
+								<li class="nav-item"> <a class="nav-link py-3" id="pills-contact-tab3" data-toggle="pill" href="#pills-resturant" role="tab" aria-controls="pills-contact" aria-selected="false">Best Sale</a> </li>
+							</ul>
+						</div> - -->
+						<div class="col-md-4 col-sm-4 text-dark view-btn">
+							<div class="ad_img"><a href="#" style="text-decoration: none; color: black;">
+								<div class="image-dis p-2 ">
+									<img src="uploads/download (2).jfif" alt="" srcset="" class="img-fluid rounded" >
+								</div>
+								<div class="name_rate p-2 d-flex justify-content-between">
+									<h5 style="font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic;">Makeup_Art_sibu</h5>
+									<h6>₹ 10000/-</h6>
+								</div>
+								<div class="locate p-3">
+									<p style="font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic; margin-top: -20px;"><span><i class="fa-solid fa-location-dot"></i></span>chennai</p>
+								</div>
+								<div class="d-grid gap-2 col-6 mx-auto">
+									<button class="btn btn-outline-danger">View More</button>
+								</div>
+							</a></div>
+						</div>
+					</div>
+                
+                       
+					
+					<style>
+						.ad_img {
+							background: white;
+							height: 380px;
+							border-radius: 10px;
+							box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+						}
+					</style>
+
+                </div>
+            </div>
+        </div>
+		<!--	Recent Properties  -->
+
+
+
+
+
+
+
+
+
+
+
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
 		</script>
