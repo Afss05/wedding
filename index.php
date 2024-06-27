@@ -267,8 +267,8 @@ include("config.php");
 								<div class="locate p-3">
 									<p style="font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic; margin-top: -20px;"><span><i class="fa-solid fa-location-dot"></i></span>chennai</p>
 								</div>
-								<div class="d-grid gap-2 col-6 mx-auto">
-									<button class="btn btn-outline-danger">View More</button>
+								<div class="d-grid gap-2 col-6 mx-auto view_more">
+									<button class="btn btn-outline-danger" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">View More</button>
 								</div>
 							</a></div>
 						</div>
@@ -282,6 +282,9 @@ include("config.php");
 							height: 380px;
 							border-radius: 10px;
 							box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+						}
+						.view_more {
+							margin-top: -10px;
 						}
 					</style>
 

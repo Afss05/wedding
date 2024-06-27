@@ -38,7 +38,7 @@
     }
 
     .mdn-accordion {
-        width: 200px !important;
+        width: 300px !important;
         margin-top: 0px;
         border-radius: 15px;
     }
@@ -566,8 +566,10 @@
 --------------------------------------------------- */
 .indigo-accordion-theme a,  
 .indigo-accordion-theme .accordion-title{  
-	color:#fff;
-	background:#3F51B5;
+	/* color:#fff;
+	background:#3F51B5; */
+	color: black;
+	background: white;
 	-webkit-box-shadow: inset 0 -1px #5B6BC6;
 	-moz-box-shadow: inset 0 -1px #5B6BC6;
 	box-shadow: inset 0 -1px #5B6BC6;
@@ -584,7 +586,8 @@
 .indigo-accordion-theme a:hover,
 .indigo-accordion-theme ul a:hover,
 .indigo-accordion-theme .accordion-title:hover,
-.indigo-accordion-theme ul .accordion-title:hover { background:#303E89; }
+/* .indigo-accordion-theme ul .accordion-title:hover { background:#303E89; } */
+.indigo-accordion-theme ul .accordion-title:hover { background: #F0F3FF; }
 .indigo-accordion-theme .accordion-toggle:checked + .accordion-title{ background:#293574; }
 .indigo-accordion-theme ul .accordion-toggle:checked + .accordion-title{ background:#303E89; }
 .indigo-accordion-theme ul ul .accordion-toggle:checked + .accordion-title{ background:#37469B; }
@@ -681,7 +684,8 @@
 
   /* Show the drop-content when the 'show' class is present */
   #drop-content.show {
-    display: block;
+    display: flex;
+	width: 10px!important;
   }
 
 
@@ -701,16 +705,16 @@
             <a class="nav-link active" aria-current="page" href="index.html">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="carousel.php">Link</a>
+            <a class="nav-link" href="investors.php">Investors</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle drophead" id="dropitem"  onclick="toggleDropdown()">
               Vendors
             </a>
-            <ul class="mdn-accordion indigo-accordion-theme dropdown-menu" id="drop-content">
-                <li class="sub-level">
+            <ul class="mdn-accordion indigo-accordion-theme dropdown-menu d-lfex" id="drop-content">
+                <!-- <li class="sub-level">
                     <input class="accordion-toggle" type="checkbox" name ="group-1" id="group-1">
-                    <label class="accordion-title" for="group-1"> <i class="fa fa-television"></i> Television </label>
+                    <label class="accordion-title" for="group-1"> Makeup Artists </label>
                     <ul>
                         <li class="sub-level">
                             <input class="accordion-toggle" type="checkbox" name ="sub-group-1" id="sub-group-1">
@@ -754,10 +758,23 @@
                         <li><a href="#"><i class="fa fa-file"></i> Text Document</a></li>
                         <li><a href="#"><i class="fa fa-file-pdf-o"></i> PDF Document</a></li>
                     </ul>
-                </li>
+                </li> -->
+				<div class="cate-type">
+					<li><a href="#"></i> Makeup Artists </a></li>
+					<li><a href="#"></i> Photographer </a></li>
+					<li><a href="#"></i> Mehandi Artists </a></li>
+					<li><a href="#"></i> Jewellery </a></li>
+					<li><a href="#"></i> Wedding Wear </a></li>
+				</div>
+				<div class="cate-type">
+					<li><a href="#"></i> Venues </a></li>
+					<li><a href="#"></i> Catering </a></li>
+					<li><a href="#"></i> Decoration </a></li>
+					<li><a href="#"></i> Honeymoon </a></li>
+					<li><a href="#"></i> Invitation </a></li>
+				</div>
                 
                 
-                <li><a href="#"><i class="fa fa-chain"></i> Links </a></li>
             </ul>
             
           </li>

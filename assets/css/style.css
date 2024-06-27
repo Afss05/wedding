@@ -206,7 +206,8 @@
     --------------------------
 */
 .page-wrapper {
-    background-color: #d3915f;
+    /* background-color: #EDF6FD; */
+    background-color: #ffd3f0;
     overflow: hidden !important;
     height: auto;
 }

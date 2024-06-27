@@ -270,7 +270,7 @@ if(isset($_POST['add']))
                                 <a class="nav-link" href="product.php">Product</a>
                                 </li>
                                 <li class="nav-item">
-                                <a class="nav-link" href="#">Gallery</a>
+                                <a class="nav-link" href="gallery.php">Gallery</a>
                                 </li>
                                 <li class="nav-item">
                                 <a class="nav-link" href="#">Sample</a>
